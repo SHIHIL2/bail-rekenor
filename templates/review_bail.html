@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Bail Petitions</title>
+</head>
+<body>
+    <h1>Review Bail Petitions</h1>
+    {% for petition in petitions %}
+        <div>
+            <h3>FIR Number: {{ petition.fir }}</h3>
+            <p>Bail Details: {{ petition.bail_details }}</p>
+            <form method="POST" action="{{ url_for('accept_bail', petition_id=petition.id) }}">
+                <input type="submit" value="Accept">
+            </form>
+            <form method="POST" action="{{ url_for('reject_bail', petition_id=petition.id) }}">
+                <input type="submit" value="Reject">
+            </form>
+        </div>
+    {% else %}
+        <p>No pending bail petitions found.</p>
+    {% endfor %}
+</body>
+</html>

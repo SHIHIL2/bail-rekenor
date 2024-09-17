@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reckoner</title>
+</head>
+<body>
+    <h1>View Reckoner</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>{{ form.section.label }} {{ form.section() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% if section_details %}
+        <h2>Section Details</h2>
+        <p>{{ section_details }}</p>
+    {% endif %}
+</body>
+</html>

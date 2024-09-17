@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Reckoner Results{% endblock %}
+
+{% block content %}
+<h2>Section Details</h2>
+<p><strong>Section Number:</strong> {{ section_details['section'] }}</p>
+<p><strong>Description:</strong> {{ section_details['description'] }}</p>
+<p><strong>Eligibility for Bail:</strong> {{ section_details['eligibility'] }}</p>
+<a href="{{ url_for('up_dashboard') }}">Back to Dashboard</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Bail Petition Status</title>
+</head>
+<body>
+    <h1>Bail Petition Status</h1>
+    {% if petition %}
+        <p>FIR Number: {{ petition.fir }}</p>
+        <p>Bail Details: {{ petition.bail_details }}</p>
+        <p>Status: {{ petition.status }}</p>
+    {% else %}
+        <p>No petition found with the given FIR number.</p>
+    {% endif %}
+</body>
+</html>
